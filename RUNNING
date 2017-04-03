@@ -1,0 +1,10 @@
+
+Run the dev server with file monitoring:
+npm start
+
+Precompile:
+npm run build
+
+Serve:
+npm run serve
+
