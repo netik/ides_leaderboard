@@ -2,7 +2,7 @@
 Run the dev server with file monitoring:
 npm start
 
-Precompile:
+Precompile assets from src --> bundle.js:
 npm run build
 
 Serve:
