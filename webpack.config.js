@@ -1,10 +1,13 @@
 // webpack.config.js
 const config = {
   context: __dirname + '/src',
-  entry: './app.js',
+  entry: {
+      front: './front-app.js',
+      leaderboard: './leaderboard-app.js'
+  },
   output: {
     path: __dirname + '/dist',
-    filename: 'bundle.js'
+    filename: "[name]-bundle.js"
   },
   module: {
     rules: [{
