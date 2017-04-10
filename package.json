@@ -27,6 +27,11 @@
   "dependencies": {
     "express": "^4.15.2",
     "formidable": "^1.1.1",
+    "mysql": "^2.13.0",
+    "react": "^15.5.3",
+    "react-dom": "^15.5.3",
+    "react-flip-move": "^2.9.1",
+    "react-table": "^5.5.0",
     "winston": "^2.3.1",
     "winston-express-middleware": "^0.1.0"
   }
