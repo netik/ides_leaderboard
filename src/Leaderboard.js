@@ -180,21 +180,21 @@ class Leaderboard extends React.Component {
             // best guard
             this.setState({
                     sortState:[{id: 'won', desc: true}],
-                        boardTitle: 'Best Guard'});
+                        boardTitle: 'Best Guards'});
 
             break;
         case 4:
             // best senators
             this.setState({
                     sortState:[{id: 'won', desc: true}],
-                        boardTitle: 'Best Senator'});
+                        boardTitle: 'Best Senators'});
             break;
         case 5:
             // best senators
             // best gladatrix
             this.setState({
                     sortState:[{id: 'won', desc: true}],
-                        boardTitle: 'Best Gladiatrix'});
+                        boardTitle: 'Best Gladiatrices'});
             break;
         }
 
