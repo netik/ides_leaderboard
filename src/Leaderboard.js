@@ -50,7 +50,7 @@ const columns = [
     {
         header: 'Name',
         accessor: 'name',
-        minWidth: 250,
+        minWidth: 325,
         render: ({value, rowValues, row, index, viewIndex}) => {
             let ptype = "Unknown";
             switch(row.ptype) {
@@ -194,9 +194,11 @@ class Leaderboard extends React.Component {
         </div>
 
         <ReactTable
+            showPagination={false}
             data={this.state.data}
             defaultPageSize={10}
             columns={columns}
+            headerStyle={{textAlign: 'center'}}
             sorting={this.state.sortState}
             getTrProps={(state, rowInfo, column) => {
                     // return an old-school "Stargate" style
