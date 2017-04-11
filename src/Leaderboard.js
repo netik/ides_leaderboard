@@ -109,17 +109,38 @@ const columns = [
 
 
 class Leaderboard extends React.Component {
-    reloadBadges() {
+    filterData(ptype, data) { 
+        let res = [];
+
+        if (data.length == 0) { return([]); }
+        
+        // filter an array based on type 
+        for (var i = 0; i < data.length; i++) {
+            if (data[i].ptype == ptype) { 
+                res.push(data[i]);
+            }
+        }
+        
+        return res;
+    }
+
+    reloadBadges(cb) {
         console.log("reload badges");
             $.ajax({
                     url: '/badges.json',
                         dataType: 'json',
                         success: function(data) {
-                        this.setState({data: data});
-                    }.bind(this),
-                          error: function(xhr, status, err) {
-                        console.error('reload fail');
-                          }.bind(this)
+                            let arr = [];
+                            if (cb > 2) {
+                                this.setState({data: this.filterData(cb-2, data)});
+                                return;
+                            }
+                            this.setState({data: data});
+                        }.bind(this),
+                        error: function(xhr, status, err) {
+                            console.error('reload fail');
+                            this.setState({data: []});
+                        }.bind(this)
                     });
 
     }
@@ -128,35 +149,52 @@ class Leaderboard extends React.Component {
 
         // rotate page
         cb = cb + 1;
-        if (cb > 2) { cb = 0;};
+        if (cb > 5) { cb = 0;};
+        this.setState({currentBoard: cb});
 
         // reload our data
-        this.reloadBadges();
+        this.reloadBadges(cb);
 
         switch (cb) {
         case 0:
             // most wins
             this.setState({
                         sortState:[{id: 'won', desc: true}],
-                        boardTitle: 'Most Wins',
-                        currentBoard: cb});
+                        boardTitle: 'Most Wins'});
 
             break;
         case 1:
             // most losses
             this.setState({
                     sortState:[{id: 'lost', desc: true}],
-                        boardTitle: 'Most Losses',
-                        currentBoard: cb});
+                        boardTitle: 'Most Losses'});
 
             break;
         case 2:
             // most xp
             this.setState({
                     sortState:[{id: 'xp', desc: true}],
-                        boardTitle: 'Most XP',
-                        currentBoard: cb});
+                        boardTitle: 'Most XP'});
+            break;
+        case 3:
+            // best guard
+            this.setState({
+                    sortState:[{id: 'won', desc: true}],
+                        boardTitle: 'Best Guard'});
 
+            break;
+        case 4:
+            // best senators
+            this.setState({
+                    sortState:[{id: 'won', desc: true}],
+                        boardTitle: 'Best Senator'});
+            break;
+        case 5:
+            // best senators
+            // best gladatrix
+            this.setState({
+                    sortState:[{id: 'won', desc: true}],
+                        boardTitle: 'Best Gladiatrix'});
             break;
         }
 
@@ -173,7 +211,7 @@ class Leaderboard extends React.Component {
             boardTitle: 'Most Wins',
             currentBoard: 0
         };
-        this.reloadBadges();
+        this.reloadBadges(0);
         this.changeContent = this.changeContent.bind(this);
 
         // change screens every five secs
