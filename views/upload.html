@@ -26,6 +26,9 @@
             <p>Please upload an image, approximately 200x200 pixels wide and as clear as possible</p>
 
             <p><i><strong>Before you hit upload</strong></i>, enter your name, as you would like it to appear on the badge:</br>
+              <div id="errortext" style="display: none;">
+                <font color="#ff0000">You must enter your name. </font>
+              </div>
               <input id="name" placeholder="Your name" type="text"></p>
             <button class="btn btn-lg upload-btn" type="button">Upload File</button>
           </div>
@@ -35,6 +38,6 @@
   </div>
   <input id="upload-input" type="file" name="uploads[]" multiple="multiple"></br>
 
-  <script src="javascripts/upload.js"></script>
+  <script src="dist/upload-bundle.js"></script>
 </body>
 </html>

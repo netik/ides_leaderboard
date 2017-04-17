@@ -1,7 +1,15 @@
-$('.upload-btn').on('click', function (){
-    $('#upload-input').click();
-    $('.progress-bar').text('0%');
-    $('.progress-bar').width('0%');
+$('.upload-btn').on('click', function (e){
+  
+  if (! $("#name").val()) {
+    $('#errortext').show();
+    $('#deletesuccess').delay(2000).fadeOut();
+    e.stopPropagation();
+    return;
+  }
+  
+  $('#upload-input').click();
+  $('.progress-bar').text('0%');
+  $('.progress-bar').width('0%');
 });
 
 $('#upload-input').on('change', function(){

@@ -1,9 +1,12 @@
+var webpack = require("webpack");
+
 // webpack.config.js
 const config = {
   context: __dirname + '/src',
   entry: {
-      front: './front-app.js',
-      leaderboard: './leaderboard-app.js'
+    front: './front-app.js',
+    leaderboard: './leaderboard-app.js',
+    upload: './upload-app.js'
   },
   output: {
     path: __dirname + '/dist',
@@ -25,7 +28,13 @@ const config = {
         }
       ]
     }]
-  }
+  },
+  plugins: [
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery"
+    })
+  ]
 }
 
 module.exports = config
