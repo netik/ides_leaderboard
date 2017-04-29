@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<style>
+
+body{
+  background-repeat: repeat-y !important;
+  background-position: center center !important;
+  background-image:url(/img/spqr_bg.png) !important;
+
+  min-height:100%;
+}
+
+.page-header h1 {
+    color: #f15a29 !important;
+}
+
+b {
+    color: #ffff00 !important;
+}
+
+strong {
+    color: #ffff00 !important;
+}
+
+@-webkit-keyframes super-rainbow {
+  0%   { color: #ffff00; } 
+  20%  { color: #ffcd00; }
+  40%  { color: #c3d74b; }
+  60%  { color: #c3d7d7; }
+  80%  { color: #ffc39b; }
+  100% { color: #ffff00; }
+}
+
+@-moz-keyframes super-rainbow {
+  0%   { color: #ffff00; } 
+  20%  { color: #ffcd00; }
+  40%  { color: #c3d74b; }
+  60%  { color: #c3d7d7; }
+  80%  { color: #ffc39b; }
+  100% { color: #ffff00; }
+}
+
+@keyframes super-rainbow {
+    from {
+        color: rgb(255, 0, 0);
+    }
+    16.6% {
+        color: rgb(255, 0, 255);
+    }
+    33.3% {
+        color: rgb(0, 0, 255);
+    }
+    50% {
+        color: rgb(0, 255, 255);
+    }
+    66.6% {
+        color: rgb(0, 255, 0);
+    }
+    83.3% {
+        color: rgb(255, 255, 0);
+    }
+    to {
+        color: rgb(255, 0, 0);
+    }
+}
+
+.unicorn  {
+    color: white;
+    animation: super-rainbow 3s linear 0s infinite;
+}
+
+</style>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href="../../favicon.ico">
+
+        <title>The Ides of DEF CON</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Telestrap theme CSS -->
+        <link href="/css/bootstrap-theme.css" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="/css/starter-template.css" rel="stylesheet">
+
+        <link href="/css/react-table.css" rel="stylesheet">
+        <style>
+        body {
+          font-size:22px;
+        }
+
+        .ReactTable .rt-th, .ReactTable .rt-td {
+          padding: 0px;
+        }
+
+        </style>
+    </head>
+
+    <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">THE IDES OF DEF CON</a>
+                </div>
+                <div id="navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/#about">About</a></li>
+                        <li><a href="/#contact">Contact</a></li>
+                        <li class="active"><a href="/faq/">Battle/Game FAQ</a></li>
+                        <li><a href="/leaderboard/">Leaderboard</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </nav>
+
+        <div class="container">
+          <div class="starter-template">
+            <div class="page-header">
+              <h1>Battle/Game FAQ</h1>
+            </div>
+              <p>
+                <b>The Ides of DEF CON</b> is a multi player Role
+                Playing Game (RPG) that takes place over a private,
+                AES encrypted 915Mhz Radio network at DEF CON 25. To
+                play, you must have a badge. You can buy one, or build
+                one using the plans on this site.
+              </p>
+            <p>
+              Battle begins when two characters decide to fight each
+              other by starting a battle over the radio network.  This
+              is done by tapping <b>FIGHT</b> (from the badge screen or
+              icon)
+            </p>
+            <p>
+              Battle progresses in a turn-by-turn basis, with each
+              player selecting <b>HIGH, MIDDLE, or LOW</b> attacks and
+              then damage is calculated at the end of the round. It
+              continues until one player dies or stops making moves.
+            </p>
+            <p>
+              If you stop making moves the battle will time out, and
+              the fight will exit with any accumulated damage.
+            </p>
+            <div class="page-header">
+              <h2>Starting attributes</h2>
+            </div>
+            <p>
+              Players start at <b>LEVEL 1</b> with <b>70 HP, 0 XP</b>, and
+              <b>MIGHT</b>
+              and <b>AGILITY</b> set to the default for the
+              character class they have selected, as follows:
+              <ul>
+                <li>Guard: <b>+1 MIGHT, +0 AGL</b></li>
+                <li>Senator: <b>-1 MIGHT, +2 AGL</b></li>
+                <li>Gladiatrix: <b>+1 MIGHT, +1 AGL</b></li>
+              </ul>
+            </p>
+            <P>
+              You cannot change your class once you start playing.
+            </p>
+            <div class="page-header">
+              <h2>HP (Hit Points)</h2>
+            </div>
+            Your <b>MAX HP</b> increases with each level you attain. 
+            <div class="container">
+            <div class="col-md-offset-3 col-md-6">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th><b>Level</b></th>
+                    <th><b>HP</b></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>70</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>90</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>110</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>130</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>150</td>
+                  </tr>
+                  <tr>
+                    <td>6</td>
+                    <td>170</td>
+                  </tr>
+                  <tr>
+                    <td>7</td>
+                    <td>190</td>
+                  </tr>
+                  <tr>
+                    <td>8</td>
+                    <td>210</td>
+                  </tr>
+                  <tr>
+                    <td>9</td>
+                    <td>230</td>
+                  </tr>
+                  <tr>
+                    <td>10</td>
+                    <td>250</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            </div>
+            <p>
+              The formula to calculate HP for Level is  <code>hp = (70+(20*(level-1)))</code>
+            </p>
+            <div class="page-header">
+              <h2>XP (Experience Points) and Levels</h2>
+            </div>
+            <p>
+              When you win or lose, you gain XP. Reaching certain XP
+              levels increases your character's level. On a win,
+              an <b>XP factor</b> is applied depending on the
+              level of the character you are fighting. If the
+              character is substantially higher than you, you gain
+              more XP. If lower, you don't get as much XP as a normal
+              fight.
+            </p>
+            <hr>
+            <p>
+              To calculate the <b>XP Factor</b>, first determine the difference between you and the enemy.
+            </p>
+            <p>
+              <code>leveldelta = current_enemy_level  - your_level</code>
+            </p>
+            <P>
+              We use this value to get the XP Gain Factor, which is
+              calculated as follows:
+            </p>
+            <div class="container">
+            <div class="col-md-offset-2 col-md-8">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th><b>Difference</b></th>
+                  <th><b>Factor</b></th>
+                  <th><b>Display Color</b></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>&ge; 3</td>
+                  <td>2x XP</td>
+                  <td><font color="#ff0000">RED</font></td>
+                </tr>
+                <tr>
+                  <td>&ge; 2</td>
+                  <td>1.50x XP</td>
+                  <td><font color="#FFA500">ORANGE</font></td>
+                </tr>
+                <tr>
+                  <td>&ge; 1</td>
+                  <td>1.25x XP</td>
+                  <td><font color="#ffff00">YELLOW</font></td>
+                </tr>
+                <tr>
+                  <td>0</td>
+                  <td>1x XP</td>
+                  <td><font color="#00ff00">GREEN</font></td>
+                </tr>
+                <tr>
+                  <td>&le; 1</td>
+                  <td>.75x XP</td>
+                  <td><font color="#00ff00">GREEN</font></td>
+                </tr>
+                <tr>
+                  <td>&le; 2</td>
+                  <td>.25x XP</td>
+                  <td><font color="#008800">DARK GREEN</font></td>
+                </tr>
+                <tr>
+                  <td>&le; 3</td>
+                  <td>0 XP</td>
+                  <td><font color="#888888">GREY</font></td>
+                </tr>
+              </tbody>
+            </table>
+            </div>
+            </div>
+            <p>
+              <font color="#888888">GREY</font> enemies offer no XP on win.
+            </p>
+            <p>
+              The formula to calculate XP gain on a win: <br/>
+              <code>xpwin_gain = (80 + ((your_level-1) * 16)) * factor</code>
+            </p>
+            <p>
+              The formula to calculate XP gain on a loss: <br/>
+              <code>xploss_gain = (10 + ((your_level-1) * 16))</code>
+            </p>
+
+            <div class="page-header">
+              <h2>XP required per level</h2>
+            </div>
+            <p>
+              As you gain more and more XP, you will advance through levels.
+            </p>
+            <div class="container">
+            <div class="col-md-offset-3 col-md-6">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th><b>Level</b></th>
+                    <th><b>XP Required</b></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>0</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>400</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>880</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>1440</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>2080</td>
+                  </tr>
+                  <tr>
+                    <td>6</td>
+                    <td>2800</td>
+                  </tr>
+                  <tr>
+                    <td>7</td>
+                    <td>3600</td>
+                  </tr>
+                  <tr>
+                    <td>8</td>
+                    <td>4480</td>
+                  </tr>
+                  <tr>
+                    <td>9</td>
+                    <td>5440</td>
+                  </tr>
+                  <tr>
+                    <td>10</td>
+                    <td>6480</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            </div>
+            <p>
+              No further advancement is available after level 10, and
+              the game has been designed such that it should take about
+              50 wins to get to level 10 at about 5 wins/level.
+            </p>
+
+            <div class="page-header">
+              <h2>Agility, Might and Damage</h2>
+            </div>
+            
+            <p>
+              <b>Agility</b> and <b>Might</b> contribute to your character's ability to deal damage (see below)
+            </p>
+            <p>
+              When you level up, you can add a point to either
+              <b>Agility</b> or <b>Might</b>.<br/>
+
+              You can only choose once per level and cannot reallocate points.
+            </p>
+          <div class="page-header">
+            <h2>Damage Calculation</h2>
+          </div>
+
+            <p>
+              On every turn , you can pick a <b>HIGH, MIDDLE, or
+              LOW</b> attack.
+            </p>
+
+            <p>
+              The color shown on the results screen (shown after both
+              players move) shows you the sucess of your
+              attack. Damage is random, and modified based on your
+              chosen attack and AGL/MIGHT values. 
+            </p>
+            
+            <table class="table">
+              <tr>
+                <td><font color="#ffff00">Yellow</font></td>
+                <td>80% Damage - Hit blocked (same hit chosen)</td>
+              </tr>
+              <tr>
+                <td><font color="#ff0000">Red</font></td>
+                <td>100% damage - Normal Hit</td>
+              </tr>
+              <tr>
+                <td><font color="#ff00ff">Purple</font></td>
+                <td>200% damage - Critical Hit</td>
+              </tr>
+            </table>
+
+            <p><font color="#ff00ff">Critical Hit</font> - All
+              characters have a 20% chance of doing a critical hit on
+              each turn which will double your damage to your
+              enemy. This chance can be as high as 40% if you have the LUCK unlock.
+            </p>
+            <hr>
+            <p>Damage is calculated by the following formula at the end of a turn:</p>
+            
+            <p>
+              <code>basemax = (25 * ( level - 1 ) ^ 0.3)</code><br/>
+              <code>base = random ( from .5 * basemax , to 1 * basemax )</code></br>
+              <code>base = base + (2 * MIGHT) - (3*AGL)</code></br>
+            </p>
+
+            <p>
+              <b>Caesar</b> - If you are a senator and you are attacking Caesar, you do 2x damage to Caesar
+            </p>
+            <p>
+              
+            </p>
+            
+            <div class="page-header">
+              <h2>End of Turn</h2>
+            </div>
+
+            <p>
+              When a turn is ends, damage will be shown and the HP
+              bars updated. If no one is dead, you will be returned to
+              to the move select screen. This will continue in a loop
+              until someone runs out of hit points.
+            </p>
+
+            <p>
+              When someone dies, XP will be granted and if either user
+              has reached a new Level, the upgrade screen will be
+              shown where a player can upgrade their <b>Agility</b>
+              or <b>Might</b> points.
+            </p>
+            
+            <p>
+              In the event that you <b>both are dead</b>, then the
+              game will take <b>overkill</b> into account. The person
+              with the least amount of hitpoints will lose.
+            </p>
+            <HR>
+            <p>
+              <b>Example:</b> </br>
+              You have 10 HP left.</br>
+              The enemy has 15 HP left.</br>
+              You hit the enemy for 20 HP.</br>
+              He hits you for 20 HP.</br>
+              <b>YOU LOSE</b>, because he overkills you by 10 HP.
+            </p>
+            
+            <div class="page-header">
+            <h2>Healing</h2>
+            </div>
+            <p>
+              Healing occurs only on the <b>BADGE</b> screen. This is
+              the default screen with your character and stats.
+            </p>
+
+            <p>
+              It takes approximately 20 seconds to heal to full
+              health, regardless of level. If you have the unlock
+              for <b>FAST HEAL</b> you will heal in 10 seconds.
+            </p>
+
+            <div class="page-header">
+              <h2>In-combat State</h2>
+            </div>
+
+            <p>
+              Starting combat of any time puts you into an in-combat
+              state. Other players cannot fight you while you are in
+              combat, and some badge features (like radio chat) are
+              disabled during this time.
+            </p>
+
+            <p>
+              Combat is released when you die, exit a battle, or reboot. 
+            </p>
+            <div class="page-header">
+              <h2>&#x1f512; Unlocks</h2>
+            </div>
+            <p>
+              A number of unlocks are available that will modify the
+              game. You can find them or be granted them by super
+              users who have black badges. 
+            </p>
+            <p>
+              Collect them all! This list is not a complete list at all...
+            </p>
+            <div class="container">
+            <div class="col-md-offset-2 col-md-8">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th><b>Name</b></th>
+                  <th><b>Buff</b></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>+DEF</td>
+                  <td>Defense: -10% on all hits / EFF Supporter</td>
+                </tr>
+                <tr>
+                  <td>+HP</td>
+                  <td>More HP: +10 % HP </td>
+                </tr>
+                <tr>
+                  <td>+MIGHT</td>
+                  <td>+1 MIGHT</td>
+                </tr>
+                <tr>
+                  <td>+LUCK</td>
+                  <td>+20% LUCK / chance-to-crit</td>
+                </tr>
+                <tr>
+                  <td>+FAST HEAL</td>
+                  <td>2x Healing Speed</td>
+                </tr>
+                <tr>
+                  <td>+CAESAR</td>
+                  <td>Become Caesar</td>
+                </tr>
+                <tr>
+                  <td>+SENATOR</td>
+                  <td>Become a Senator</td>
+                </tr>
+              </tbody>
+            </table>
+            </div>
+            </div>
+            <hr>
+            <P><b>Thanks for playing the IDES OF DEF CON. We hope you
+          love the game as much as we do!</b></p>
+        </div><!-- /.container -->
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="/js/jquery-2.2.0.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+        <script src="/build/react.js"></script>
+        <script src="/build/react-dom.js"></script>
+ 
+        <script src="/dist/leaderboard-bundle.js"></script>
+    </body>
+</html>
+

@@ -20,6 +20,7 @@ $('#upload-input').on('change', function(){
     // create a FormData object which will be sent as the data payload in the
     // AJAX request
     var formData = new FormData();
+    formData.append('name', $('#name').val());
 
     // loop through all the selected files and add them to the formData object
     for (var i = 0; i < files.length; i++) {
