@@ -586,6 +586,7 @@ pre {
   border-radius: 0;
   background-clip: padding-box;
   border-width: 0;
+  font-size: 20px;
 }
 .carousel-caption {
   text-shadow: none;
