@@ -154,7 +154,40 @@ strong {
             </p>
             <p>
               If you stop making moves the battle will time out, and
-              the fight will exit with any accumulated damage.
+              the fight will exit with any accumulated damage. Neither
+              player will gain XP if you time out.
+            </p>
+            <div class="page-header">
+              <h2>Gameplay</h2>
+            </div>
+            <p align="center">
+              <img src="/img/board-layout-800.png" border="0" alt="board layout">
+            </p>
+            <p>
+              To attack your opponent, wait until the game says
+              "CHOOSE ATTACK!" and either tap on the arrows, your
+              opponent's character, or make a move on the <b>D-pad</b> by
+              pressing <b>Up</b> for a <b>HIGH attack</b>, <b>Right</b> for a <b>MIDDLE attack</b>, or
+              <b>Down</b> for a <b>LOW attack</b>.
+            </p>
+            <p>
+              You can also use the <b>D-Pad</b> and <b>ENTER</b>
+              button to navigate through menus when not playing the
+              game.
+            </p>
+            
+            <p>
+              As this badge is an exposed PCB, try not to cover the
+              antenna, or touch any exposed metal on the PCB. Doing so
+              will impact the game.
+            </p>
+
+            <p>
+              <b>Pro-tip:</b> If you tap on your character's avatar
+              while on the badge screen, you can rotate the
+              badge display. There are multiple holes drilled into the badge
+              if you'd like to wear the badge portrait-style
+              vs. landscape.
             </p>
             <div class="page-header">
               <h2>Starting attributes</h2>
@@ -471,7 +504,9 @@ strong {
             <p>
               In the event that you <b>both are dead</b>, then the
               game will take <b>overkill</b> into account. The person
-              with the least amount of hitpoints will lose.
+              with the least amount of hitpoints will lose. In the
+              event that this results in a second tie, the person who
+              initiated the fight wins.
             </p>
             <HR>
             <p>
@@ -480,7 +515,7 @@ strong {
               The enemy has 15 HP left.</br>
               You hit the enemy for 20 HP.</br>
               He hits you for 20 HP.</br>
-              <b>YOU LOSE</b>, because he overkills you by 10 HP.
+              <b>YOU LOSE</b>, because now the enemy is at -5 HP while you are at -10 HP. 
             </p>
             
             <div class="page-header">
@@ -499,7 +534,8 @@ strong {
 
             <p>
               If you have been randomly chosen to be Casear, you
-              cannot heal!
+              cannot heal, and must fight to the finish to revert back
+              to your original character.
             </p>
             
             <div class="page-header">
@@ -508,21 +544,22 @@ strong {
 
             <p>
               Once you have reached Level III (3) you are eligible to
-              become Caesar. When Caesar is activated you will have
-              3X the hit points of your level.
+              become Caesar. When Caesar is activated you will have 3X
+              the hit points of your level, but you will not be able
+              to heal!
             </p>
             <p>
               When fighting <b>Senators</b>, <b>Senators deal two
-              times damage</b> to Caesar. It may take multiple
-              senators attacking Caesar to killhim. You know what to
-              do; Gang up and take him out, Ides of March style. 
+              times damage</b> to Caesar. It will take multiple
+              fights, usually with multiplee senators attacking Caesar
+              to kill him. You know what to do; Gang up and take him
+              out, Ides of March style.
             </p>
             <p>
               When you die as Caesar, you will be reverted back to
               your original (permanent) class and your health will be
               fully restored.
-            </p>
-
+            </p
             <p>
               If you kill someone who is Caesar, you will earn at
               least two times normal XP. ( +1 <b>XP Factor</b> &mdash; see the table above.)
@@ -540,7 +577,10 @@ strong {
             </p>
 
             <p>
-              Combat is released when you die, exit a battle, or reboot. 
+              Combat is released when you die, exit a battle, or
+              reboot. You may not be visible on other players badges
+              for a couple seconds (until your badge pings again)
+              after a fight.
             </p>
             <div class="page-header">
               <h2>&#x1f512; Unlocks</h2>
@@ -585,11 +625,11 @@ strong {
                 </tr>
                 <tr>
                   <td>+CAESAR</td>
-                  <td>Become Caesar</td>
+                  <td>Become Caesar instantly</td>
                 </tr>
                 <tr>
                   <td>+SENATOR</td>
-                  <td>Become a Senator</td>
+                  <td>Become a Senator instantly</td>
                 </tr>
               </tbody>
             </table>
