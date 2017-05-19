@@ -1,12 +1,14 @@
 use dc25;
 
+drop table badges;
+drop table badge_history;
 
 create table badges (
        id     integer not null auto_increment,
-       created_at datetime not null,
-       updated_at datetime not null,
+       created_at timestamp DEFAULT '0000-00-00 00:00:00',
+       updated_at timestamp default now() on update now(),
        name   varchar(255) not null,
-       badgeid  bigint not null,
+       badgeid  varchar(10) not null,
        ptype  integer not null,
        hp     integer not null,
        xp     integer not null,
@@ -22,10 +24,10 @@ create table badges (
 
 create table badge_history (
        id     integer not null auto_increment,
-       created_at datetime not null,
-       updated_at datetime not null,
+       created_at timestamp DEFAULT '0000-00-00 00:00:00',
+       updated_at timestamp default now() on update now(),
        name   varchar(255) not null,
-       badgeid  bigint not null,
+       badgeid  varchar(10) not null,
        ptype  integer not null,
        hp     integer not null,
        xp     integer not null,
@@ -38,3 +40,6 @@ create table badge_history (
        primary key(id)
 );
 
+ALTER TABLE `badges` ADD UNIQUE `unique_key` ( `id` );
+
+ALTER TABLE `badges` ADD UNIQUE `unique_key_badgeid` ( `badgeid` );

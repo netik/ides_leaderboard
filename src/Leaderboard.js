@@ -20,8 +20,7 @@ class PlayerAvatar extends React.Component {
         case 4:
             img='caesar.png';
             break;
-        // 5 is bender, but we won't show that. 
-        default:
+         default:
             img='notset.png';
             break;
         }
@@ -35,20 +34,20 @@ class PlayerAvatar extends React.Component {
 const columns = [
     {
         // note the terrible hack here -- viewIndex is not always the actual index
-        header: 'Rank',
+        header: '',
         accessor: 'id',
         render: ({value, rowValues, row, index, viewIndex}) => viewIndex+1 + '.',
-        style: {textAlign: 'right', verticalAlign: 'middle', lineHeight: '40px', fontSize: '40px'},
+        style: {textAlign: 'right', verticalAlign: 'middle', lineHeight: '30px', fontSize: '18px'},
         minWidth: 80
     },
     {
         header: '',
         accessor: 'ptype',
         render: ({value, rowValues, row, index, viewIndex}) => <PlayerAvatar type={value} />,
-        style: {textAlign: 'center', verticalAlign: 'middle', lineHeight: '40px'},
+        style: {textAlign: 'center', verticalAlign: 'middle', lineHeight: '30px'},
     },
     {
-        header: 'Name',
+        header: 'NAME',
         accessor: 'name',
         minWidth: 325,
         render: ({value, rowValues, row, index, viewIndex}) => {
@@ -69,41 +68,41 @@ const columns = [
             }
             return (
                     <div>
-                    <span style={{fontSize: "40px"}}>{value}</span> <span style={{fontSize: "16px", padding: 0}}> - {ptype}</span>
+                <span style={{fontSize: "18px", lineHeight:'20px'}}>{value}</span> <span style={{fontSize: "14px", paddingBottom: 30}}><br/>{ptype}<br/></span>
                     </div>
             )
         }, 
-        style: {textAlign: 'left', verticalAlign: 'middle', lineHeight: '40px'}
+        style: {textAlign: 'left', verticalAlign: 'middle', lineHeight: '30px'}
     },
     {
-        header: 'Level',
+        header: 'LEVEL',
         accessor: 'plevel',
-        style: {textAlign: 'right', verticalAlign: 'middle', lineHeight: '40px'}
+        style: {textAlign: 'right', verticalAlign: 'middle', lineHeight: '30px'}
     },
     {
         header: 'XP',
         accessor: 'xp',
-        style: {textAlign: 'right', verticalAlign: 'middle', lineHeight: '40px'}
+        style: {textAlign: 'right', verticalAlign: 'middle', lineHeight: '30px'}
     },
     {
-        header: 'Won',
+        header: 'WON',
         accessor: 'won',
-        style: {textAlign: 'right', verticalAlign: 'middle', lineHeight: '40px'}
+        style: {textAlign: 'right', verticalAlign: 'middle', lineHeight: '30px'}
     },
     {
-        header: 'Lost',
+        header: 'LOST',
         accessor: 'lost',
-        style: {textAlign: 'right', verticalAlign: 'middle', lineHeight: '40px'}
+        style: {textAlign: 'right', verticalAlign: 'middle', lineHeight: '30px'}
     },
     {
-        header: 'Agility',
+        header: 'AGL',
         accessor: 'agl',
-        style: {textAlign: 'right', verticalAlign: 'middle', lineHeight: '40px'}
+        style: {textAlign: 'right', verticalAlign: 'middle', lineHeight: '30px'}
     },
     {
-        header: 'Might',
+        header: 'MIGHT',
         accessor: 'might',
-        style: {textAlign: 'right', verticalAlign: 'middle', lineHeight: '40px'}
+        style: {textAlign: 'right', verticalAlign: 'middle', lineHeight: '30px'}
     }
     ]
 
