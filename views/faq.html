@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <style>
 
 body{
@@ -131,14 +131,24 @@ strong {
             <div class="page-header">
               <h1>Battle/Game FAQ</h1>
             </div>
-              <p>
-                <b>The Ides of DEF CON</b> is a multi player Role
-                Playing Game (RPG) that takes place over a private,
-                AES encrypted 915Mhz Radio network at DEF CON 25. To
-                play, you must have a badge. You can buy one, or build
-                one using the plans on this site.
-              </p>
             <p>
+              <b>The Ides of DEF CON</b> is a multi player Role
+              Playing Game (RPG) that takes place over a private,
+              AES encrypted 915Mhz Radio network at DEF CON 25. To
+              play, you must have a badge. You can buy one, or build
+              one using the plans on this site.
+            </p>
+            <p>
+              Badges are aware of other badges and ping their status
+              to the network approximately once every three seconds.
+            </p>
+            <div class="page-header">
+              <h2>Gameplay</h2>
+            </div>
+            <p align="center">
+              <img src="/img/board-layout-800.png" border="0" alt="board layout">
+            </p>
+                        <p>
               Battle begins when two characters decide to fight each
               other by starting a battle over the radio network.  This
               is done by tapping <b>FIGHT</b> from the launcher or by
@@ -157,12 +167,6 @@ strong {
               the fight will exit with any accumulated damage. Neither
               player will gain XP if you time out.
             </p>
-            <div class="page-header">
-              <h2>Gameplay</h2>
-            </div>
-            <p align="center">
-              <img src="/img/board-layout-800.png" border="0" alt="board layout">
-            </p>
             <p>
               To attack your opponent, wait until the game says
               "CHOOSE ATTACK!" and either tap on the arrows, your
@@ -176,10 +180,17 @@ strong {
               game.
             </p>
             <p>
-              The LEDs around the outside of the display (and the
-              screen) will show how much time you have left before the
+              The LEDs around the outside of the screen 
+              will show how much time you have left before the
               round times out. You must make a move before the clock
               expires or the battle will end.
+            </p>
+            <p>
+              Once you make a move, the LEDs will change color to
+              represent the remaining hit points you and your opponent have.
+              Your character's HP is always displayed on the top six LEDs in in <font color="#ff8000">Orange</font>.
+              Your opponent's HP is on the bottom LEDs <font color="#0000ff">Blue</font>.
+
             </p>
             <p>
               As this badge is an exposed PCB, try not to cover the
@@ -188,11 +199,15 @@ strong {
             </p>
 
             <p>
-              <b>Pro-tip:</b> If you tap on your character's avatar
-              while on the badge screen, you can rotate the
-              badge display. There are multiple holes drilled into the badge
-              if you'd like to wear the badge portrait-style
-              vs. landscape.
+              <b>Pro-tip: You can wear the badge in landscape or
+                portrait orientation! </b>
+            </p>
+            <p>
+              Go into the settings page and enable the 'Rotate badge'
+              checkbox, then hit "save". Then, move the Lanyard clips
+              to the top hole of the badge. Rotation only impacts the
+              default badge screen. The fight screens and all other
+              screens are always in landscape orientation.
             </p>
             <div class="page-header">
               <h2>Starting attributes</h2>
@@ -356,7 +371,7 @@ strong {
               The formula to calculate XP gain on a loss: <br/>
               <code>xploss_gain = (10 + ((your_level-1) * 16))</code>
             </p>
-
+            <a name="xptable"></a>
             <div class="page-header">
               <h2>XP required per level</h2>
             </div>
@@ -476,13 +491,15 @@ strong {
             <p>Damage is calculated by the following formula at the end of a turn:</p>
             
             <p>
-              <code>basemax = (25 * ( level - 1 ) ^ 0.3)</code><br/>
+              <code>basemax = (42 * ( level - 1 ) ^ 0.2)</code><br/>
               <code>base = random ( from .5 * basemax , to 1 * basemax )</code></br>
-              <code>base = base + (2 * MIGHT) - (3*AGL)</code></br>
+              <code>base = base + (2 * MIGHT) - (3 * AGL)</code></br>
             </p>
 
             <p>
-              <b>Caesar</b> - If you are a senator and you are attacking Caesar, you do 2x damage to Caesar
+              <b>Caesar</b> - If you are a senator and you are
+              attacking Caesar, a bonus multiplier of 2 X damage will
+              be applied.
             </p>
             <p>
               
@@ -549,25 +566,31 @@ strong {
 
             <p>
               Once you have reached Level III (3) you are eligible to
-              become Caesar. When Caesar is activated you will have 3X
-              the hit points of your level, but you will not be able
+              become Caesar, which will occur during a random
+              "election".  When Caesar is activated you will have 3X
+              the hit points of your base level, but you will not be able
               to heal!
             </p>
+            
             <p>
               When fighting <b>Senators</b>, <b>Senators deal two
               times damage</b> to Caesar. It will take multiple
-              fights, usually with multiplee senators attacking Caesar
-              to kill him. You know what to do; Gang up and take him
+              fights, to kill a character who is Caesar.
+            </p>
+            
+            <P>
+              <b>You know what to do!</b>
+              Gang up and take him
               out, Ides of March style.
             </p>
             <p>
               When you die as Caesar, you will be reverted back to
               your original (permanent) class and your health will be
               fully restored.
-            </p
+            </p>
             <p>
               If you kill someone who is Caesar, you will earn at
-              least two times normal XP. ( +1 <b>XP Factor</b> &mdash; see the table above.)
+              least two times normal XP. ( +1 <b>XP Factor</b> &mdash; see <a href="#xptable">the table</a> above.)
             </p>
             
             <div class="page-header">
@@ -575,10 +598,11 @@ strong {
             </div>
 
             <p>
-              Starting combat of any time puts you into an in-combat
+              Starting combat puts your badge into an in-combat
               state. Other players cannot fight you while you are in
               combat, and some badge features (like radio chat) are
-              disabled during this time.
+              disabled during this time. You will also not appear on
+              other badges' 'Select a Challenger' screens.
             </p>
 
             <p>
@@ -587,6 +611,7 @@ strong {
               for a couple seconds (until your badge pings again)
               after a fight.
             </p>
+            
             <div class="page-header">
               <h2>&#x1f512; Unlocks</h2>
             </div>
