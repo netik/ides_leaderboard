@@ -41,5 +41,5 @@ var deadline = new Date(Date.parse(new Date(2017,
                                             6,
                                             27)));
 
-initializeClock('clockdiv', deadline);
+//initializeClock('clockdiv', deadline);
 

@@ -23,8 +23,6 @@
         <!-- Telestrap theme CSS -->
         <link href="/css/bootstrap-theme.css" rel="stylesheet">
 
-        <!-- Custom styles for this template -->
-        <link href="/css/starter-template.css" rel="stylesheet">
         <style>
         body {
           font-size:22px;
@@ -50,7 +48,8 @@
                         <li><a href="#about">About</a></li>
                         <li><a href="#contact">Contact</a></li>
                         <li><a href="/faq/">Battle/Game FAQ</a></li>
-                        <li><a href="/leaderboard/">Leaderboard</a></li>
+                        <!-- We never used the leaderboard. Sigh. -->
+                        <!-- <li><a href="/leaderboard/">Leaderboard</a></li> -->
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>
@@ -68,6 +67,7 @@
               <img src="img/characters.jpg">
             </p>
             <!-- def con, yo -->
+            <!--
             <div id="clockdiv">
               <p align="center">
                 <span class="days"></span> days,
@@ -81,7 +81,8 @@
                   DEF CON 25.
                 </a>
               </p>
-              </div>
+            </div>
+-->
             </div>
             </p>
             <div class="page-header">
@@ -102,7 +103,13 @@
               <a href="https://www.kickstarter.com/projects/1887776662/indie-defcon-badge-the-ides-of-defcon">
               Kickstarter page!
               </a>
-
+              </p>
+            <div class="page-header">
+              <H1>Screens</h1>
+              </div>
+              <p>
+                Yeah, we get it. Lots of people broke their screens and we'll never use that screen again.
+                If you want to order a new screen, <a href="screens.html">Ordering information</a> is avaialble.
               </p>
           <div class="page-header">
             <h1>Source code and PCB</h1>
@@ -154,33 +161,57 @@
   A precompiled binary of the latest firmware is available here. Copy
   badge.bin to your microSD card and select 'Update Firmware' from the
   main badge menu, or flash the firmware to the device using a SWD
-  programmer. For the <a href="https://github.com/netik/chibios-orchard/blob/orchard-r2/badge/CHANGELOG.md">CHANGELOG</a>, see our git repository.
+  programmer. For the <a href="https://github.com/netik/chibios-orchard/blob/orchard-r2/badge/CHANGELOG.md">CHANGELOG</a>, see our
+  <a href="https://github.com/netik/chibios-orchard/blob/orhard-r2/badge">git repository on GitHub</a>.
 </p>
 
-<h3>1.1 (latest)</h3>
+
+<h3>updater.bin</h3>
 <p>
-  md5 3cd06c91d9025e58daabd6281fb76005 <a href="https://photos.retina.net/dc25/ides-dc25-fw-1.1.zip">ides-dc25-fw-1.1.zip (96215 bytes)</a></br>
-  md5 38829d7fe7afa567ff469fb1c01e8163 badge.bin</br>
+  In order to successfully update the firmware, two things must be
+  present on your SD card - updater.bin and badge.bin. This file is
+  included on the asset disk image, but we are adding it here in case
+  you need it.
 </p>
-
-<h3>1.0 (factory version)</h3>
 <p>
-  md5 29b5b11d8521a962c7380f8752966b58 <a href="https://photos.retina.net/dc25/ides-dc25-fw-1.0.zip">ides-dc25-fw-1.0.zip (95878 bytes)</a></br>
-  md5 88842d76a2258993b3f113c7e55c4b12 badge.bin</br>
+  md5 <font color="#666666">b698a3189e63607bcf391f6a6160bfa7</font>
+  <a href="https://photos.retina.net/dc25/updater.bin">updater.bin (5044 bytes)</a>
 </p>
 
+<h3>1.1 (Latest)</h3>
+<p>
+  md5 <font color="#666666">3cd06c91d9025e58daabd6281fb76005</font>
+  <a href="https://photos.retina.net/dc25/ides-dc25-fw-1.1.zip">ides-dc25-fw-1.1.zip (96215 bytes)</a></br>
+
+  md5 <font color="#666666">38829d7fe7afa567ff469fb1c01e8163</font>
+  badge.bin</br>
 </p>
 
-          <div class="page-header">
-            <h1>MicroSD Card</h1>
-          </div>
+<h3>1.0 (Factory)</h3>
+<p>
+  This firmware was placed on all boards shipped from Macrofab on July
+  7th,2017.
+</p>
+<p>
+  md5 <font color="#666666">29b5b11d8521a962c7380f8752966b58</font>
+  <a href="https://photos.retina.net/dc25/ides-dc25-fw-1.0.zip">ides-dc25-fw-1.0.zip (95878 bytes)</a></br>
+  md5 <font color="#666666">88842d76a2258993b3f113c7e55c4b12</font>
+  badge.bin</br>
+</p>
+
+<div class="page-header">
+  <h1>MicroSD Card</h1>
+</div>
 <p>
   We typically ship these boards with a 4 GB MicroSD card containing audio, video, and graphical game assets. You will need one to play the game.
   Download the following file, unzip it, and write it out to a 4GB (or larger) microSD Card. We recommend Class 4 cards or better for performance.
 </p>
 <p>
   Download: </br>
-  md5 87ba18414f2757fea7e5d3cb29b1f778 <a href="https://photos.retina.net/dc25/dc25spqr.img.dmg.gz">dc25spqr.img.dmg.gz (241MB)</a>
+  md5 <font color="#666666">87ba18414f2757fea7e5d3cb29b1f778</font>
+  <a href="https://photos.retina.net/dc25/dc25spqr.img.dmg.gz">
+    dc25spqr.img.dmg.gz (241MB)
+  </a>
 </p>
           <div class="page-header">
             <a name="contact"></a>
@@ -188,7 +219,9 @@
             <h1>About</h1>
           </div>
 <p>
-  The Ides of DEF CON is brought to you by John (<a href="https://twitter.com/netik">@netik</a>), Bill Paul, Egan Hirvela, and Matthew Harris.
+  The Ides of DEF CON is brought to you by John Adams
+  (<a href="https://twitter.com/netik">@netik</a>),
+  Bill Paul, Egan Hirvela, and Matthew Harris.
 </p>
 <p>Follow us on <a href="https://twitter.com/spqrbadge">Twitter</a>!</p>
 <p align="center">

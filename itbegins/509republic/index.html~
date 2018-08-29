@@ -53,13 +53,9 @@
   </head>
   <body>
     <div id="txtfadein">
-      <p align="center"><img src="img/ides_of_march.jpg"></p>
-      <p>Very few soldiers, even good ones, have what it takes to stab a man to death.</p>
+      <p>ROMULUS AND REMUS</p>
+      <p align="center"><img src="../img/legend.jpg"></p>
     </div>
   </body>
-  <!-- "If he had anything confidential to say, he wrote it in cipher ... "
-        — Suetonius, Life of Julius Caesar
-
-        WjjkQnxeoYkjzepwaWogIwnyqoPanajpeqo
-  -->  
+  
 </html>
