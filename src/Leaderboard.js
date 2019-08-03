@@ -14,9 +14,13 @@ const columns = [
     accessor: 'name',
     minWidth: 325,
     render: ({value, rowValues, row, index, viewIndex}) => {
+      let fs = '30px';
+      if (viewIndex == 0) {
+        fs = '50px';
+      }
       return (
         <div>
-        <span style={{fontSize: "30px", lineHeight:'30px'}}>{value}</span>
+        <span style={{fontSize: fs, lineHeight:'30px'}}>{value}</span>
         </div>
       )
     },
@@ -46,6 +50,25 @@ const columns = [
 
 
 class Leaderboard extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      badges: [],
+      lastupdate: undefined,
+      sortState:[{
+        id: 'won',
+        desc: true
+      }],
+      boardTitle: 'Most Wins',
+      currentBoard: 0
+    };
+    this.reloadBadges(0);
+    this.changeContent = this.changeContent.bind(this);
+
+    // change screens every five secs
+    setInterval(this.changeContent, 5000);
+  }
+
   filterData(ptype, data) {
     let res = [];
 
@@ -73,6 +96,8 @@ class Leaderboard extends React.Component {
           return;
         }
         this.setState({data: data});
+        this.setState({lastupdate: Date()})
+        console.log("loadok");
       }.bind(this),
       error: function(xhr, status, err) {
         console.error('reload fail');
@@ -117,36 +142,29 @@ class Leaderboard extends React.Component {
 
 
         }
-        constructor(props) {
-          super(props);
-          this.state = {
-            badges: [],
-            sortState:[{
-              id: 'won',
-              desc: true
-            }],
-            boardTitle: 'Most Wins',
-            currentBoard: 0
-          };
-          this.reloadBadges(0);
-          this.changeContent = this.changeContent.bind(this);
 
-          // change screens every five secs
-          setInterval(this.changeContent, 5000);
-        }
 
         render() {
           let counts = '';
+          let lu = '';
+
           if (this.state.data) {
             counts = <p><b>{this.state.data.length} badges seen.</b></p>;
           } else {
             counts = "";
           }
 
-          return <div>
+          return ( <div>
           <div className="page-header">
-          <h1>DA BOMB Leaderboard - {this.state.boardTitle}</h1>
-          </div>
+            <div className="row">
+            <h1>DA BOMB Leaderboard - {this.state.boardTitle}</h1>
+            </div>
+            <div className="row">
+              <h3 className="pull-right">
+              LAST UPDATE: {this.state.lastupdate}
+              </h3>
+            </div>
+            </div>
 
           <ReactTable
           showPagination={false}
@@ -162,6 +180,9 @@ class Leaderboard extends React.Component {
 
             if (rowInfo) {
               delay = (rowInfo.viewIndex % 3) * 0.1;
+              if (rowInfo.viewIndex == 0 && column == 0) {
+                return {style: { fontSize: '40px' } }
+              }
               if (rowInfo.viewIndex == 0) { return {style: { color: 'Red' } } }
             }
 
@@ -174,7 +195,7 @@ class Leaderboard extends React.Component {
           }}
           />
           {counts}
-          </div>;
+          </div>);
         }
       }
 
