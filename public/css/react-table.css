@@ -20,7 +20,14 @@
 	align-items: stretch;
 	width: 100%;
 	border-collapse: collapse;
-	overflow: auto
+	overflow: auto;
+	background:  rgba(76, 175, 80, 0.3);
+	background-repeat: no-repeat !important;
+	background-position: center center !important;
+	background-image:url(/img/bombtop-retina.jpg) !important;
+	background-size: 100%;
+	background-position: 0px 100px;
+	min-height:100%;
 }
 
 .ReactTable .rt-thead {
