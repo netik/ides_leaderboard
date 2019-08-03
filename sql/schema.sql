@@ -1,14 +1,14 @@
-use dc25;
+use dc29;
 
 drop table badges;
 drop table badge_history;
 
 create table badges (
        id     integer not null auto_increment,
-       created_at timestamp DEFAULT '0000-00-00 00:00:00',
-       updated_at timestamp default now() on update now(),
+       created_at timestamp DEFAULT CURRENT_TIMESTAMP,
+       updated_at timestamp default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
        name   varchar(255) not null,
-       badgeid  varchar(10) not null,
+       badgeid  varchar(255) not null,
        ptype  integer not null,
        hp     integer not null,
        xp     integer not null,
@@ -24,10 +24,10 @@ create table badges (
 
 create table badge_history (
        id     integer not null auto_increment,
-       created_at timestamp DEFAULT '0000-00-00 00:00:00',
-       updated_at timestamp default now() on update now(),
+       created_at timestamp DEFAULT CURRENT_TIMESTAMP,
+       updated_at timestamp default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
        name   varchar(255) not null,
-       badgeid  varchar(10) not null,
+       badgeid  varchar(255) not null,
        ptype  integer not null,
        hp     integer not null,
        xp     integer not null,

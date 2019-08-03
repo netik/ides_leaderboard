@@ -1,262 +1,201 @@
 <!DOCTYPE html>
 <style>
-  .page-header h1 {
-      color: #f15a29 !important;
-  }
 
+@-webkit-keyframes super-rainbow {
+  0%   { color: #ffff00; }
+  20%  { color: #ffcd00; }
+  40%  { color: #c3d74b; }
+  60%  { color: #c3d7d7; }
+  80%  { color: #ffc39b; }
+  100% { color: #ffff00; }
+}
+
+@-moz-keyframes super-rainbow {
+  0%   { color: #ffff00; }
+  20%  { color: #ffcd00; }
+  40%  { color: #c3d74b; }
+  60%  { color: #c3d7d7; }
+  80%  { color: #ffc39b; }
+  100% { color: #ffff00; }
+}
+
+@keyframes super-rainbow {
+  from {
+    color: rgb(255, 0, 0);
+  }
+  16.6% {
+    color: rgb(255, 0, 255);
+  }
+  33.3% {
+    color: rgb(0, 0, 255);
+  }
+  50% {
+    color: rgb(0, 255, 255);
+  }
+  66.6% {
+    color: rgb(0, 255, 0);
+  }
+  83.3% {
+    color: rgb(255, 255, 0);
+  }
+  to {
+    color: rgb(255, 0, 0);
+  }
+}
+
+.unicorn  {
+  color: white;
+  animation: super-rainbow 3s linear 0s infinite;
+}
 
 </style>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <meta name="description" content="">
-        <meta name="author" content="">
-        <link rel="icon" href="../../favicon.ico">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#A98B69"/>
 
-        <title>The Ides of DEF CON</title>
+  <title>da Bomb!</title>
+  <meta name="description" content="Indie DEF CON 27 Badge">
 
-        <!-- Bootstrap core CSS -->
-        <link href="/css/bootstrap.min.css" rel="stylesheet">
-
-        <!-- Telestrap theme CSS -->
-        <link href="/css/bootstrap-theme.css" rel="stylesheet">
-
-        <style>
-        body {
-          font-size:22px;
-        }
-        </style>
-    </head>
-
-    <body>
-        <nav class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">THE IDES OF DEF CON</a>
-                </div>
-                <div id="navbar" class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                        <li><a href="/faq/">Battle/Game FAQ</a></li>
-                        <!-- We never used the leaderboard. Sigh. -->
-                        <!-- <li><a href="/leaderboard/">Leaderboard</a></li> -->
-                    </ul>
-                </div><!--/.nav-collapse -->
-            </div>
-        </nav>
-
-        <div class="container">
-          <div class="starter-template">
-            <div class="jumbotron" style="background: red;">
-              <h1>The Ides of DEF CON</h1>
-              <p>A wearable hardware badge, featuring blinky lights,
-                sound, a sub-1Ghz radio, games, and more. Based on the
-                NXP/Freescale KW01. </p>
-            </div>
-            <p align="center">
-              <img src="img/characters.jpg">
-            </p>
-            <!-- def con, yo -->
-            <!--
-            <div id="clockdiv">
-              <p align="center">
-                <span class="days"></span> days,
-                <span class="hours"></span>
-                hours, 
-                <span class="minutes"></span>
-                minutes, and
-                <span class="seconds"></span>
-                seconds until
-                <a href="https://www.defcon.org/html/defcon-25/dc-25-index.html">
-                  DEF CON 25.
-                </a>
-              </p>
-            </div>
+  <!--
+  <style>
+  body {
+    background: url(/img/dark-pattern.png) top left no-repeat;
+  }
+  </style>
 -->
-            </div>
-            </p>
-            <div class="page-header">
-              <h1>2019 Badge</h1>
-            </div>
-            <p>
-              We're building a new badge for 2019 (DC27). Sneak peeks over on 
-            <a href="https://hackaday.io/project/161163-team-ides-dc27-badge">
-              Hackaday.io
-            </a>
-            !
-            </p>
 
-            <div class="page-header">
-              <h1>Hackaday page</h1>
-            </div>
-            <p>
-              Our
-            <a href="https://hackaday.io/project/14756-the-ides-of-defcon-an-unofficial-electronic-badge">
-              Hackaday.io page from 2017
-            </a>
-            page has the 2017 project log, some build instructions, and history.
-            </p>
-            <div class="page-header">
-              <h1>Post-Mortem</h1>
-            </div>
-            <p>
-            The
-            <a href="https://medium.com/@spqrbadge/ides-of-def-con-badge-post-mortem-ba9d7855b85f">Post-Mortem</a>
-            page on Medium has lessons learned from building this badge. Find out what we learned and don't repeat our mistakes!
-            </p>
-            <div class="page-header">
-              <h1>Kickstarter</h1>
-            </div>
-            <p>
-              We used Kickstarter in 2017 to raise over <b>$23,000</b> for this project. Check out our history here on
-              <a href="https://www.kickstarter.com/projects/1887776662/indie-defcon-badge-the-ides-of-defcon">
-              Kickstarter.
-              </a>
-              </p>
-            <div class="page-header">
-              <H1>Screens</h1>
-              </div>
-              <p>
-                Yeah, we get it. Lots of people broke their screens and you can get a new one by looking at the
-                <a href="/screens/">Screen Ordering information</a> page.
-              </p>
-          <div class="page-header">
-            <h1>Source code and PCB</h1>
-          </div>
-          <p>
-            If you want to make your own board, you can get our
-            <a href="https://github.com/netik/dc25_spqr_badge">
-              PCB layout
-            </a>
-            and 
-            <a href="https://github.com/netik/chibios-orchard">
-              Firmware source code.
-            </a>
-          </p>
-            <P>You will need
-              the <a href="https://launchpad.net/gcc-arm-embedded">GNU ARM Toolchain</a>
-              to build this code, as well as a
-              suitable ARM JTAG/SWD programmer such as the Olimex
-              ARM-USB-OCD-H, plus the latest SD Card (see below)</P>
-            <div class="page-header">
-              <h1>Programming Tools</h1>
-            </div>
-            <P>
-              GNU ARM Toolchain<br/>
-              <a href="https://launchpad.net/gcc-arm-embedded">https://launchpad.net/gcc-arm-embedded</a>
-            </p>
-            <P>
-              Olimex ARM-USB-OCH-H JTAG debugger ($50):<br/>
-              <a href="http://www.mouser.com/ProductDetail/Olimex-Ltd/ARM-USB-OCD-H">
-                http://www.mouser.com/ProductDetail/Olimex-Ltd/ARM-USB-OCD-H
-              </a>
-            </p>
-            <P>
-              Olimex JTAG to SWD (Serial Wire Debug) adapter ($5):<br/>
-              <a href="http://www.mouser.com/ProductDetail/Olimex-Ltd/ARM-JTAG-SWD">
-                http://www.mouser.com/ProductDetail/Olimex-Ltd/ARM-JTAG-SWD
-              </a>
-            </p>
-          <P>
-            Embedded Artists 20 pin to 10 pin adapter ($15):<br/>
-            <a href="http://www.mouser.com/ProductDetail/Embedded-Artists/EA-ACC-040">
-              http://www.mouser.com/ProductDetail/Embedded-Artists/EA-ACC-040
-            </a>
-          </p>
-          <div class="page-header">
-            <h1>Firmware</h1>
-          </div>
-<p>
-  A precompiled binary of the latest firmware is available here. Copy
-  badge.bin to your microSD card and select 'Update Firmware' from the
-  main badge menu, or flash the firmware to the device using a SWD
-  programmer. For the <a href="https://github.com/netik/chibios-orchard/blob/orchard-r2/badge/CHANGELOG.md">CHANGELOG</a>, see our
-  <a href="https://github.com/netik/chibios-orchard/blob/orhard-r2/badge">git repository on GitHub</a>.
-</p>
+  <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,600|Oswald:400,700|Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link href="/css/extra.css?v=7c08eaece2" rel="stylesheet" type="text/css">
 
+  <link href="/css/style.css?v=7c08eaece2" rel="stylesheet" type="text/css">
+  <link href="/css/react-table.css" rel="stylesheet">
+  <link href="/css/ides.css" rel="stylesheet">
 
-<h3>updater.bin</h3>
-<p>
-  In order to successfully update the firmware, two things must be
-  present on your SD card - updater.bin and badge.bin. This file is
-  included on the asset disk image, but we are adding it here in case
-  you need it.
-</p>
-<p>
-  md5 <font color="#666666">b698a3189e63607bcf391f6a6160bfa7</font>
-  <a href="https://photos.retina.net/dc25/updater.bin">updater.bin (5044 bytes)</a>
-</p>
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  <link rel="dns-prefetch" href="https://maxcdn.bootstrapcdn.com">
+  <link rel="dns-prefetch" href="https://code.jquery.com">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
 
-<h3>1.1 (Latest)</h3>
-<p>
-  md5 <font color="#666666">3cd06c91d9025e58daabd6281fb76005</font>
-  <a href="https://photos.retina.net/dc25/ides-dc25-fw-1.1.zip">ides-dc25-fw-1.1.zip (96215 bytes)</a></br>
+  <meta name="description" content="Indie DEF CON 27 Badge" />
+  <link rel="shortcut icon" href="/dabomb/favicon.png" type="image/png" />
+  <link rel="canonical" href="https://ides.team/dabomb/" />
+  <meta name="referrer" content="no-referrer-when-downgrade" />
 
-  md5 <font color="#666666">38829d7fe7afa567ff469fb1c01e8163</font>
-  badge.bin</br>
-</p>
+  <meta property="og:site_name" content="da Bomb!" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="da Bomb!" />
+  <meta property="og:description" content="Indie DEF CON 27 Badge" />
+  <meta property="og:url" content="https://ides.team/dabomb/" />
+  <meta property="og:image" content="https://ides.team/dabomb/content/images/2019/07/bomb-box-top.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="da Bomb!" />
+  <meta name="twitter:description" content="Indie DEF CON 27 Badge" />
+  <meta name="twitter:url" content="https://ides.team/dabomb/" />
+  <meta name="twitter:image" content="https://ides.team/dabomb/content/images/2019/07/bomb-box-top.png" />
+  <meta name="twitter:site" content="@spqrbadge" />
+  <meta property="og:image:width" content="2000" />
+  <meta property="og:image:height" content="1333" />
 
-<h3>1.0 (Factory)</h3>
-<p>
-  This firmware was placed on all boards shipped from Macrofab on July
-  7th,2017.
-</p>
-<p>
-  md5 <font color="#666666">29b5b11d8521a962c7380f8752966b58</font>
-  <a href="https://photos.retina.net/dc25/ides-dc25-fw-1.0.zip">ides-dc25-fw-1.0.zip (95878 bytes)</a></br>
-  md5 <font color="#666666">88842d76a2258993b3f113c7e55c4b12</font>
-  badge.bin</br>
-</p>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "publisher": {
+      "@type": "Organization",
+      "name": "da Bomb!",
+      "logo": "https://ides.team/dabomb/content/images/2019/07/bombface-tsp2.png"
+    },
+    "url": "https://ides.team/dabomb/",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://ides.team/dabomb/content/images/2019/07/bomb-box-top.png",
+      "width": 2000,
+      "height": 1333
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://ides.team/dabomb/"
+    },
+    "description": "Indie DEF CON 27 Badge"
+  }
+  </script>
 
-<div class="page-header">
-  <h1>MicroSD Card</h1>
+  <meta name="generator" content="Ghost 2.25" />
+  <link rel="alternate" type="application/rss+xml" title="da Bomb!" href="https://ides.team/dabomb/rss/" />
+</head>
+
+<body class="home-template dark brown">
+
+  <!-- MAIN NAVBAR -->
+  <div id="main-navbar">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="https://ides.team/dabomb">
+          <!-- DUAL LOGO SWITCHER
+          <img alt="da Bomb!" class="img-fluid lazy logo-dark" src="/dabomb/assets/images/logo-dark.png?v=7c08eaece2" />
+          <img alt="da Bomb!" class="img-fluid lazy logo-light" src="/dabomb/assets/images/logo-light.png?v=7c08eaece2" />
+        -->
+        <!-- SINGLE LOGO -->
+        <img alt="da Bomb!" class="img-fluid lazy" src="/img/bombface-tsp2.png" />
+      </a>
+      <div class="mobile-navbar-buttons">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar-content" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fa fa-bars"></i>
+        </button>
+        <button class="search-panel-toggle d-lg-none btn-control navbar-toggler" type="button"><i class="fa fa-search"></i></button>
+      </div>
+      <div class="collapse navbar-collapse justify-content-end" id="main-navbar-content">
+      <!--
+        <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="https://ides.team/dabomb/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://ides.team/dabomb/about/">ABOUT</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://ides.team/dabomb/game/">HOW TO PLAY</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://ides.team/dabomb/firmware/">FW</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/netik/dc27_badge/tree/master/software/firmware/badge">CODE</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/netik/dc27_badge/tree/master/hardware/dc27_badge_kicad">PCB</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://twitter.com/spqrbadge">TWITTER</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://troupeit.com/badge">BUY NOW</a>
+        </li>
+        <li class="nav-item d-none d-lg-block">
+          <a class="btn-control nav-link search-panel-toggle"><i class="fa fa-search"></i></a>
+        </li>
+      </ul>
+    -->
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+    <div id="leaderboard"></div>
+</div><!-- /.container -->
 </div>
-<p>
-  We typically ship these boards with a 4 GB MicroSD card containing audio, video, and graphical game assets. You will need one to play the game.
-  Download the following file, unzip it, and write it out to a 4GB (or larger) microSD Card. We recommend Class 4 cards or better for performance.
-</p>
-<p>
-  Download: </br>
-  md5 <font color="#666666">87ba18414f2757fea7e5d3cb29b1f778</font>
-  <a href="https://photos.retina.net/dc25/dc25spqr.img.dmg.gz">
-    dc25spqr.img.dmg.gz (241MB)
-  </a>
-</p>
-          <div class="page-header">
-            <a name="contact"></a>
-            <a name="about"></a>
-            <h1>About</h1>
-          </div>
-<p>
-  The Ides of DEF CON is brought to you by John Adams
-  (<a href="https://twitter.com/netik">@netik</a>),
-  Bill Paul, Egan Hirvela, and Matthew Harris.
-</p>
-<p>Follow us on <a href="https://twitter.com/spqrbadge">Twitter</a>!</p>
-<p align="center">
-  <img src="img/dangerous.png" width="380"><br/>
-  
-</p>
-        </div><!-- /.container -->
-        <!-- Bootstrap core JavaScript
-        ================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
-        <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
-        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-        <script src="/build/react.js"></script>
-        <script src="/build/react-dom.js"></script>
- 
-        <script src="/dist/front-bundle.js"></script>
-    </body>
-</html>
 
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="/js/jquery-2.2.0.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/build/react.js"></script>
+<script src="/build/react-dom.js"></script>
+
+<script src="/dist/leaderboard-bundle.js"></script>
+</body>
+</html>

@@ -1,14 +1,13 @@
-body {
-    margin-top: 44px;
-}
-
 .lead {
     font-weight: normal;
     line-height: 1.5em;
 }
 
-
-
 .ReactTable .rt-tr {
     padding-bottom: 20px;
+}
+
+.ReactTable .rt-th {
+  font-size: 30px;
+  color: White
 }

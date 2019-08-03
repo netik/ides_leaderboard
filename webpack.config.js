@@ -6,7 +6,6 @@ const config = {
   entry: {
     front: './front-app.js',
     leaderboard: './leaderboard-app.js',
-    upload: './upload-app.js'
   },
   output: {
     path: __dirname + '/dist',

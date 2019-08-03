@@ -5,6 +5,5 @@ npm start
 Precompile assets from src --> bundle.js:
 npm run build
 
-Serve:
+Serve (go to https://localhost:1337):
 npm run serve
-
